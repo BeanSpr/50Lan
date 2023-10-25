@@ -1,0 +1,456 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* eric/css/reset/end */
+/* 標準字型 */
+@font-face {
+    font-family: jf-jinxuanlatte;
+    src: url(../webfonts/jf-jinxuanlatte-2.1-semibold.otf);
+    font-weight: 600;
+}
+@font-face {
+    font-family: jf-jinxuanlatte;
+    src: url(../webfonts/jf-jinxuanlatte-2.1-regular.otf);
+    font-weight: 400;
+}
+@font-face {
+    font-family: jf-jinxuanlatte;
+    src: url(../webfonts/jf-jinxuanlatte-2.1-ultralight.otf);
+    font-weight: 100;
+}
+@font-face {
+    font-family: lihsianti;
+    src: url(../webfonts/lihsianti-monospaced.ttf);
+}
+.font_semibold {
+    font-family: jf-jinxuanlatte;
+    font-weight: 600;
+}
+.font_regular {
+    font-family: jf-jinxuanlatte;
+    font-weight: 400;
+}
+.font_ultralight {
+    font-family: jf-jinxuanlatte;
+    font-weight: 100;
+}
+/* 網頁背景 */
+.major-color {
+    background-color: #121316;
+}
+.minor-color {
+    background-color: #1D1E26!important;
+}
+.branch-color{
+    background-color: white;
+}
+/* Loading page */
+#loading_page {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+}
+#loading_page video {
+    margin: 0;
+    height: 100%;
+    object-fit: cover;
+}
+/* Banner| Brand Panel */
+#banner {
+    height: calc( 100vh - 75px );
+}
+#banner img {
+    object-fit: cover;
+    height: 100%;
+}
+/* 導覽列 */
+.navbar {
+    z-index: 3;
+    position: sticky;
+    top: 0;
+    height: 75px;
+    padding: 10px 30px;
+}
+#brand {
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+}
+.subtitle {
+    color: white;
+    font-size: 0.9rem;
+    line-height: 1.25rem;
+    left: 10%;
+    margin-left: 5px;
+}
+.subtitle i {
+    font-size: 0.5rem;
+}
+.logo {
+    display: block;
+    height: 40px;
+}
+.navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 0;
+    align-items: center;
+}
+.nav-item a {
+    display: block;
+    width: 100px;
+    line-height: 20px;
+    text-align: center;
+    color: white;
+}
+.nav-item a:hover {
+    color: white;
+    border: transparent 0.5px solid;
+    transition: border 0.2s, background 0.2s;
+}
+img {
+    display: block;
+    width: 100%;
+}
+.page-staying a {
+    color: #FFF100;
+    font-weight: bold;
+}
+.ui-tabs .ui-tabs-nav {
+    display: flex;
+}
+.ui-tabs .ui-tabs-nav li{
+    flex: 1;
+}
+/* 主要內容區 */
+.title {
+    color: white;
+    font-size: 1.5rem;
+}
+.title span {
+    color: #FFF100;
+    font-size: 1.25rem;
+}
+section header {
+    margin: 20px 0;
+}
+section header::after {
+    content: "";
+    display: block;
+    height: 1.2px;
+    background-color: #FFF100;
+    /* border-bottom: #0152B9 3px solid; */
+    margin-top: 5px;
+    margin-left: calc( 2.5rem + 6px );
+}
+.title {
+    padding-left: 1rem;
+    border-left: #FFF100 6px solid;
+}
+.container-parent{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.container-subsheaf {
+    margin: 20px 60px;
+    padding: 20px 40px;
+    flex: 1;
+    box-shadow: 1px 1px 10px rgb(191 191 191 / 60%);
+    border-radius: 15px;
+    overflow: hidden;
+}
+/* 品牌故事 */
+video {
+    display: flex;
+    margin: 30px 0 20px;
+    width: 100%;
+    object-fit: contain;
+}
+#brand-story p {
+    color: white;
+    margin: 5px;
+    text-align: justify;
+    line-height: 1.25rem;
+    overflow: hidden;
+}
+#brand-story p::first-letter {
+    font-size: 1.25em;
+    padding: 0.1em;
+}
+#brand-story {
+    margin-right: 20px;
+}
+#word-of-mouth {
+    margin-left: 20px;
+}
+/* 口碑好評 */
+#word-of-mouth {
+    display: flex;
+    flex-direction: column;
+}
+#word-of-mouth>div {
+    display: flex;
+    flex: 1;
+    margin-top: 15px;
+}
+.users {
+    display: flex;
+    flex-basis: 1;
+    padding-top: 5px;
+    padding-left: 20px;
+}
+.texts {
+    flex-basis: 1;
+    padding: 0 20px;
+}
+#word-of-mouth i {
+    display: flex;
+    margin: 0 5px;
+    color: white;
+    font-size: 2.5rem;
+}
+#word-of-mouth p {
+    color: white;
+    line-height: 1.25rem;
+}
+#word-of-mouth>div p:first-child {
+    color: #FFF100;
+}
+/* 店長推薦 */
+#storekeeper-recommend .row {
+    justify-content: space-around;
+    margin: 90px 120px;
+}
+#storekeeper-recommend .row>div {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 40px;
+    height: 400px;
+    width: 300px;
+}
+#storekeeper-recommend .row img {
+    position: absolute;
+    height: 100%;
+    object-fit: contain;
+    bottom: -20px;
+}
+#storekeeper-recommend h3 {
+    z-index: 2;
+    position: absolute;
+    color: white;
+    font-size: 2rem;
+    writing-mode: vertical-rl;
+    font-family: lihsianti;
+    right: -40px;
+    bottom: -20px;
+}
+/* 頁尾區 */
+footer {
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+#social_media {
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.item_media {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    margin: 20px 5px 10px;
+    align-items: center;
+    text-decoration: none;
+    color: #006DBB;
+    font-size: 2rem;
+}
+.item_media:hover {
+    color: #FFF100;
+}
+#copyright {
+    padding: 15px 0 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 1rem;
+    color: white;
+}
+#copyright::before {
+    content: "";
+    display: block;
+    border-bottom: white 0.25px solid;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+#notes {
+    display: none;
+    position: fixed;
+    right: 0;
+    bottom: 200px;
+    z-index: 2;
+    width: 45px;
+    height: 120px;
+    border: #006DBB 2px solid;
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    flex-direction: column;
+}
+.functions a {
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    color: #006DBB;
+    margin: 15px 7px;
+}
+.functions a:hover {
+    color: #FFF100;
+}
+/* 最新動態 */
+#news {
+    max-width: 90%;
+}
+#news .row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 30px 60px;
+}
+div.news_box {
+    display: flex;
+    margin: 20px 0;
+}
+.news_box>div:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    margin-right: 20px;
+}
+.news_box>div:nth-child(2) {
+    width: 70%;
+    margin-left: 20px;
+}
+.news_box a {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+.news_box p {
+    color: white;
+    margin: 0 0 0.8rem;
+    line-height: 1.25rem;
+}
+.news_box>div> p:first-child {
+    font-size: 1.2rem;
+}
+.news_box>div:nth-child(2) {
+    margin-top: 80px;
+}
+/* 茶飲介紹 */
+.menu_box {
+    display: flex;
+    position: relative;
+}
+.menu_box>div {
+    display: flex;
+    position: absolute;
+    right: 18%;
+}
+.menu_box>div>div {
+    display: block;
+    width: 60px;
+}
+.menu_box a {
+    position: absolute;
+    left: 18%;
+}
+.menu_box p {
+    color: #222;
+    font-family: jf-jinxuanlatte;
+    font-weight: 400;
+    font-size: 1.5rem;
+    flex: 1;
+    writing-mode: vertical-rl;
+    text-align: left;
+}
+/* 更改tabs */
+.ui-widget.ui-widget-content {
+    border: none;
+}
+.ui-widget-content {
+    border: none;
+    background: none;
+}
+.ui-tabs .ui-tabs-nav {
+    display: flex;
+    align-items: flex-end;
+}
+.ui-widget-header {
+    border: none;
+    background: none;
+    color: transparent;
+}
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+    border: none;
+    border-bottom: 3px #FFF100 solid!important;
+    background: none;
+    color: #ffffff;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+    border: none;
+    background: transparent;
+    color: transparent;
+}
